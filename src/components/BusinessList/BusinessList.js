@@ -7,16 +7,15 @@ React.Component{
 
   render(){
 
-    return (<div className="BusinessList">
-         <Business />
-         <Business />
-         <Business />
-         <Business />
-         <Business />
-         <Business />
-      </div>
+    return (<div className="BusinessList" >
+          {
+            this.props.businesses.map(function(business) {
+            return <Business business={business} />
+          }.bind(this))
+          }
+        </div>
     );
-    
+
   }
 
 }
